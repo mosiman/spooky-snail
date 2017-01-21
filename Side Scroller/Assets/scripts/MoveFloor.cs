@@ -16,8 +16,8 @@ public class MoveFloor : MonoBehaviour
         rb = GetComponent<BoxCollider2D>();
         rbOffsetAndSize = new Vector3(rb.offset.x + rb.size.x / 2, 0, 0);
         worldPosition = Camera.main.WorldToScreenPoint(new Vector3(pos.x + rbOffsetAndSize.x, pos.y, 0));
-        print("worldPos:" + worldPosition.x.ToString() + " screen-world: " + (Camera.main.ScreenToWorldPoint(worldPosition) - rbOffsetAndSize).ToString()
-            + " position: " + this.transform.position.ToString() + " speed: " + speed.ToString());
+        //print("worldPos:" + worldPosition.x.ToString() + " screen-world: " + (Camera.main.ScreenToWorldPoint(worldPosition) - rbOffsetAndSize).ToString()
+        //    + " position: " + this.transform.position.ToString() + " speed: " + speed.ToString());
     }
 
     // Update is called once per frame
