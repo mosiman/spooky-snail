@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/sprites/samus.unity
+  isLoaded: 1
+  isActive: 1
