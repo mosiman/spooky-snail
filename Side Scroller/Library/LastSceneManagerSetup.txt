@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/sprites/samus.unity
+- path: Side Scroller.unity
   isLoaded: 1
   isActive: 1
