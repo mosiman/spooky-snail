@@ -5,42 +5,38 @@ using UnityEngine;
 public class MoveFloor : MonoBehaviour
 {
 
-    public float speed = 1f;
-    Vector3 pos;
-
+    public Vector3 speed = new Vector3(1, 0, 0);
+    BoxCollider2D rb;
+    Vector3 worldPosition;
+    Vector3 rbOffsetAndSize;
     // Use this for initialization
     void Start()
     {
-        pos = this.transform.position;
-
+        Vector3 pos = this.transform.position;
+        rb = GetComponent<BoxCollider2D>();
+        rbOffsetAndSize = new Vector3(rb.offset.x + rb.size.x / 2, 0, 0);
+        worldPosition = Camera.main.WorldToScreenPoint(new Vector3(pos.x + rbOffsetAndSize.x, pos.y, 0));
+        print("worldPos:" + worldPosition.x.ToString() + " screen-world: " + (Camera.main.ScreenToWorldPoint(worldPosition) - rbOffsetAndSize).ToString()
+            + " position: " + this.transform.position.ToString() + " speed: " + speed.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        pos.x -= speed;
-        //print(Camera.main.WorldToScreenPoint(Input.mousePosition).ToString());
-        //print((this.GetComponent<ImagePosition>().bounds.size.x / 2).ToString());
-        this.transform.position = pos;
-        //print(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        //Loop();
+        worldPosition.x -= speed.x;
+        //print("worldPos:" + worldPosition.x.ToString() + " screen-world: " + (Camera.main.ScreenToWorldPoint(worldPosition) - rbOffsetAndSize).ToString()
+        //    + " position: " + this.transform.position.ToString() + " speed: " + speed.ToString());
+        this.transform.position = Camera.main.ScreenToWorldPoint(worldPosition) - rbOffsetAndSize;
+        Loop();
     }
 
- //   void Loop()
- //   {
- //       BoxCollider2D rb = GetComponent<BoxCollider2D>();
- //   //    Vector3 worldPosition = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position));
- //       print("boxCollider:" + (rb.size.x/2).ToString());
- //       print("worldPos:" + worldPosition.x.ToString());
- //       //print((worldPosition.x + rb.size.x).ToString());
- //       //print((rb.size.x).ToString());
- //       worldPosition.z = 0;
- //       //Debug.Log ("World Position: " + worldPosition.ToString());
- //       if (pos.x < 0)
- //       {
- ////           pos.x += Camera.main.pixelWidth;
- //       }
- //  //     this.transform.position = worldPosition;
+    void Loop()
+    {
+        if (worldPosition.x < 0)
+        {
+            worldPosition.x = Camera.main.pixelWidth;
+            worldPosition = Camera.main.WorldToScreenPoint((Camera.main.ScreenToWorldPoint(worldPosition) + new Vector3(rb.size.x, 0, 0)));
+        }
 
- //   }
+    }
 }
