@@ -82,7 +82,7 @@ public class mainChar : MonoBehaviour {
             }
         }
         // Slow down with 'space'
-        if (Input.GetKeyDown(KeyCode.Space) && slowCD <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && slowCD <= 500)
         {
             slowmotion = 0.5f;
             slowCD += 2;
