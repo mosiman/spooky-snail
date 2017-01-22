@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4510863728977590}
   - component: {fileID: 212570010311507116}
   - component: {fileID: 114475643153743528}
+  - component: {fileID: 70689161609932506}
   m_Layer: 0
   m_Name: Pellet
   m_TagString: Untagged
@@ -41,6 +42,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &70689161609932506
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598183845484042}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.000608, y: -0.0011715479}
+  m_Size: {x: 0.44785243, y: 0.16137658}
+  m_Direction: 1
 --- !u!114 &114475643153743528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5fbb9662c103b4ab488ff82eb567e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 18, y: 0, z: 0}
 --- !u!212 &212570010311507116
 SpriteRenderer:
   m_ObjectHideFlags: 1
