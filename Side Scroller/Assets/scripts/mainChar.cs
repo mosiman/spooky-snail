@@ -15,7 +15,7 @@ public class mainChar : MonoBehaviour {
 
     public int interval = 55;
     public int cooldown;
-    public int ammo;
+    int ammo;
     public Transform pellet;
     Vector3 diff= new Vector3 (0.31f, 0.075f, 0);
 
