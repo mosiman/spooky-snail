@@ -12,6 +12,8 @@ using UnityEngine;
 
 public class background : MonoBehaviour {
 
+    public Transform enemy_1;
+
     public float clock;
     public float floorSpawn;
     public Transform floor;
@@ -30,8 +32,9 @@ public class background : MonoBehaviour {
         clock += 0.01f;
         if (clock % floorSpawn <= 0.01)
         {
-            
             Instantiate(floor, floorSpawnPos, Quaternion.identity);
+            Instantiate(enemy_1, new Vector3(floorSpawnPos.x, -0.08419779f, 0), Quaternion.identity);
+
             clock = 0.1f;
         }
 	}
