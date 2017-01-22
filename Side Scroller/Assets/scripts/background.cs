@@ -21,21 +21,21 @@ public class background : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        clock = 0;
+        /*clock = 0;
         floorSpawn = 1.15f;
         floorSpawnPos = new Vector3 (3.3428f + 1.83779f/ 2, -1.4f, 0);
-
+        */
     }
 	
 	// Update is called once per frame
 	void Update () {
-        clock += 0.01f;
+        /*clock += 0.01f;
         if (clock % floorSpawn <= 0.01)
         {
             Instantiate(floor, floorSpawnPos, Quaternion.identity);
             Instantiate(enemy_1, new Vector3(floorSpawnPos.x, -0.08419779f, 0), Quaternion.identity);
 
             clock = 0.1f;
-        }
+        }*/
 	}
 }
