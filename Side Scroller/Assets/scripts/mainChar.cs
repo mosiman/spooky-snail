@@ -32,6 +32,7 @@ public class mainChar : MonoBehaviour {
         cooldown = 0;
         ammo = 3;
         slowmotion = 1;
+        slowCD = 0;
         print("hello from char script!");
         rb = this.GetComponent<Rigidbody2D>();
         charAnim = gameObject.GetComponent<Animator>();
@@ -82,14 +83,21 @@ public class mainChar : MonoBehaviour {
             }
         }
         // Slow down with 'space'
-        if (Input.GetKeyDown(KeyCode.Space) && slowCD <= 500)
+        if (Input.GetKeyDown(KeyCode.Space) && slowCD <= 300)
         {
             slowmotion = 0.5f;
-            slowCD += 2;
-        } else if (Input.GetKeyUp(KeyCode.Space) || slowCD == 500)
+        } else if (Input.GetKeyUp(KeyCode.Space) || slowCD >= 300)
         {
             slowmotion = 1.0f;
-            slowCD--;
+            print(slowCD);
+        }
+
+        if (slowmotion == 0.5f)
+        {
+            slowCD += 2;
+        } else
+        {
+            slowCD -= 1;
         }
 	}
     void FixedUpdate()
