@@ -536,6 +536,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114408609647805618, guid: cd86859e433ac8d438c0c60416f2045a,
+        type: 2}
+      propertyPath: pellet
+      value: 
+      objectReference: {fileID: 4510863728977590, guid: 0f66600aa1a15144f99c1bb6eae626e4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd86859e433ac8d438c0c60416f2045a, type: 2}
   m_IsPrefabParent: 0
