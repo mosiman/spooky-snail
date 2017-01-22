@@ -111,6 +111,15 @@ MonoBehaviour:
   isJumping: 0
   charRun: {fileID: 0}
   charJump: {fileID: 0}
+  charAnim: {fileID: 0}
+  boxcol: {fileID: 0}
+  jumpSize: {x: 0, y: 0}
+  runSize: {x: 0, y: 0}
+  explosion: {fileID: 4410074980909244, guid: df1b1d14ba58d6048a639d5d18bcd14a, type: 2}
+  interval: 55
+  cooldown: 0
+  pellet: {fileID: 0}
+  slowCD: 0
 --- !u!212 &212160107522740636
 SpriteRenderer:
   m_ObjectHideFlags: 1

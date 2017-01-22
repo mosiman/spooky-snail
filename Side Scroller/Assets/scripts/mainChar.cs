@@ -16,7 +16,7 @@ public class mainChar : MonoBehaviour {
 
     public Vector2 jumpSize;
     public Vector2 runSize;
-
+    public Transform explosion;
     public int interval = 55;
     public int cooldown;
     int ammo;
@@ -109,5 +109,10 @@ public class mainChar : MonoBehaviour {
         isJumping = false;
         charAnim.runtimeAnimatorController = charRun;
         boxcol.size = runSize;
+        if (coll.transform.gameObject.name == "enemy_1(Clone)" || coll.transform.gameObject.name == "enemy_2(Clone)")
+        {
+            Instantiate(explosion, this.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
