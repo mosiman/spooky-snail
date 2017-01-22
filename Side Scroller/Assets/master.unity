@@ -444,11 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3228b2567e939b4ca325fc30f0fde39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_1: {fileID: 4845262778257052, guid: 6c5edfb98de09284c97861e2826ec29e, type: 2}
-  clock: 0
-  floorSpawn: 0
-  floor: {fileID: 4719125543025540, guid: cd5734fc730d503459f0bdfbed4416dd, type: 2}
-  floorSpawnPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1819440507
 Prefab:
   m_ObjectHideFlags: 0
