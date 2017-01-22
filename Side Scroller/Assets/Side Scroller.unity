@@ -130,6 +130,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD:Side Scroller/Side Scroller.unity
+=======
+    - target: {fileID: 114766397861704440, guid: cd5734fc730d503459f0bdfbed4416dd,
+        type: 2}
+      propertyPath: speed.x
+      value: 5
+      objectReference: {fileID: 0}
+>>>>>>> 622696af15186dfc175f6cd7f3141d6a17b1aefe:Side Scroller/Assets/Side Scroller.unity
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd5734fc730d503459f0bdfbed4416dd, type: 2}
   m_IsPrefabParent: 0

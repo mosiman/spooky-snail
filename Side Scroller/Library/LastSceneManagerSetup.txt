@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/moving floors.unity
+=======
+- path: Assets/Leo.unity
+>>>>>>> 622696af15186dfc175f6cd7f3141d6a17b1aefe
   isLoaded: 1
   isActive: 1
