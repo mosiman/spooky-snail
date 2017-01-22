@@ -23,14 +23,15 @@ public class mainChar : MonoBehaviour {
     public Transform pellet;
     Vector3 diff= new Vector3 (0.31f, 0.075f, 0);
 
-    public int slowmotion;
-    public float slowCD;
+    public static float slowmotion;
+    public int slowCD;
 
     // Use this for initialization
     void Start()
     {
         cooldown = 0;
         ammo = 3;
+        slowmotion = 1;
         print("hello from char script!");
         rb = this.GetComponent<Rigidbody2D>();
         charAnim = gameObject.GetComponent<Animator>();
@@ -45,7 +46,8 @@ public class mainChar : MonoBehaviour {
         boxcol.size = runSize;
 
     }
-        // Update is called once per frame
+
+    // Update is called once per frame
     void Update ()
     {
         // Recharge ammo
@@ -70,14 +72,24 @@ public class mainChar : MonoBehaviour {
             }
         }
 
-        // Shoot with 'Space'
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Shoot with leftclick
+        if (Input.GetMouseButtonDown(0))
         {
             if (ammo > 0)
             {
                 ammo--;
                 Instantiate(pellet, this.transform.position + diff, Quaternion.identity);
             }
+        }
+        // Slow down with 'space'
+        if (Input.GetKeyDown(KeyCode.Space) && slowCD <= 0)
+        {
+            slowmotion = 0.5f;
+            slowCD += 2;
+        } else if (Input.GetKeyUp(KeyCode.Space) || slowCD == 500)
+        {
+            slowmotion = 1.0f;
+            slowCD--;
         }
 	}
     void FixedUpdate()

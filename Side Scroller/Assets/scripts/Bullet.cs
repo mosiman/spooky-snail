@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         pos = this.transform.position;
-        relativePos.x += speed.x;
+        relativePos.x += speed.x*mainChar.slowmotion;
         this.transform.position = Camera.main.ScreenToWorldPoint(relativePos);
         if (pos.x > 3.35)
         {
