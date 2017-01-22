@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4719125543025540}
   - component: {fileID: 61873531622223152}
   - component: {fileID: 114766397861704440}
+  - component: {fileID: 114106151955911416}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -122,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323515466876372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -1.4, z: 0}
+  m_LocalPosition: {x: -3.12, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4569255016022562}
@@ -145,13 +146,29 @@ BoxCollider2D:
   m_Offset: {x: 0.010435045, y: 0.013416588}
   serializedVersion: 2
   m_Size: {x: 1.8377895, y: 0.30532023}
---- !u!114 &114766397861704440
+--- !u!114 &114106151955911416
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323515466876372}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da174a2f9db2a4949bf0dffe40d1f71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  speedConst: 1.5
+  wantWrapAround: 0
+  wraparoundPosition: 0
+  size: 1.83779
+--- !u!114 &114766397861704440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323515466876372}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b2200f68bb2a314ea1c581b8b6912fe, type: 3}
   m_Name: 
