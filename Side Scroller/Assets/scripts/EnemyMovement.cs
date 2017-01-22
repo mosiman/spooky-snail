@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour {
     float camOriginY = -1.5f;
     float camRightmost = 3.3428f;
 
+    public Transform explosion;
+
     CircleCollider2D circle;
     float size;
     public float speedConst = 1.5f;
@@ -29,6 +31,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (coll.transform.gameObject.name == "Pellet(Clone)")
         {
+            Instantiate(explosion, this.transform.position, Quaternion.identity);
             Destroy(coll.transform.gameObject);
             Destroy(gameObject);
         }
