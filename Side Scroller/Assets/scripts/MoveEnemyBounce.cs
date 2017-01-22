@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveEnemyBounce : MonoBehaviour {
 
-
+    public Vector3 speed1 = new Vector3(0.05f, 0, 0);
 
     // Use this for initialization
     void Start() {
@@ -13,7 +13,7 @@ public class MoveEnemyBounce : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        this.transform.position = new Vector3 (this.transform.position.x + 5, 0, 0);
+        this.transform.position -= speed1;
         DeleteInstance();
     }
 

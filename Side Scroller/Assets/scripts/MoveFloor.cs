@@ -37,6 +37,7 @@ public class MoveFloor : MonoBehaviour
         {
             worldPosition.x = Camera.main.pixelWidth;
             worldPosition = Camera.main.WorldToScreenPoint((Camera.main.ScreenToWorldPoint(worldPosition) + new Vector3(rb.size.x, 0, 0)));
+            //Vector3 speed1 = Camera.main.WorldToScreenPoint(speed);
             Instantiate(enemy_1, new Vector3(2.471426f, -0.1496139f, 0), Quaternion.identity);
         }
 
