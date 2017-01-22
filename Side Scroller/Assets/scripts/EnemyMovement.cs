@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
     float camOriginX = -3.3428f;
     float camOriginY = -1.5f;
-    float camRightmost = 3.3428f;
+    //float camRightmost = 3.3428f;
 
     public Transform explosion;
 

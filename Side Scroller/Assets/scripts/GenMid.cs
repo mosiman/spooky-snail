@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GenMid : MonoBehaviour {
 
-    float camOriginX = -3.3428f;
-    float camOriginY = -1.5f;
+    //float camOriginX = -3.3428f;
+    //float camOriginY = -1.5f;
     float camRightmost = 3.3428f;
     Vector3 spawnPos;
 

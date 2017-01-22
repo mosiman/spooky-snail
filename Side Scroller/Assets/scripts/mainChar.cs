@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mainChar : MonoBehaviour {
     
-    double g = -9.8;
+    //double g = -9.8;
     Vector3 startPos;
     public float jumpVel = 5000f;
     public Rigidbody2D rb;
