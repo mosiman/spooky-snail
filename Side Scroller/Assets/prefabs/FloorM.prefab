@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  speedConst: 1.5
+  speedConst: 1.7
   wantWrapAround: 0
   wraparoundPosition: 0
   size: 1.59

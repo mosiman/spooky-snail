@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  speedConst: 1.5
+  speedConst: 1.7
   wantWrapAround: 0
   wraparoundPosition: 0
   size: 0.13
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   next: {fileID: 4441611933997974, guid: 2587ae983292a654ca21b509318b9d41, type: 2}
+  enemy_1: {fileID: 4845262778257052, guid: 6c5edfb98de09284c97861e2826ec29e, type: 2}
 --- !u!212 &212053323830293118
 SpriteRenderer:
   m_ObjectHideFlags: 1

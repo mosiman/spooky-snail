@@ -33,7 +33,6 @@ public class background : MonoBehaviour {
         if (clock % floorSpawn <= 0.01)
         {
             Instantiate(floor, floorSpawnPos, Quaternion.identity);
-            Instantiate(enemy_1, new Vector3(floorSpawnPos.x, -0.08419779f, 0), Quaternion.identity);
 
             clock = 0.1f;
         }*/
