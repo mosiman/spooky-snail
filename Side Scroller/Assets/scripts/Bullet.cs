@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
+<<<<<<< HEAD
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+=======
     public Vector3 speed = new Vector3(8, 0, 0);
     Vector3 relativePos;
     CapsuleCollider2D rb;
@@ -27,5 +37,6 @@ public class Bullet : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+>>>>>>> 622696af15186dfc175f6cd7f3141d6a17b1aefe
 	}
 }
