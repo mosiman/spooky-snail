@@ -9,9 +9,13 @@ public class mainChar : MonoBehaviour {
     public float jumpVel = 5000f;
     public Rigidbody2D rb;
     public bool isJumping; //auto set to false
-    public Animator charRun;
-    public Animator charJump;
+    public RuntimeAnimatorController charRun;
+    public RuntimeAnimatorController charJump;
+    public Animator charAnim;
+    public BoxCollider2D boxcol;
 
+    public Vector2 jumpSize;
+    public Vector2 runSize;
 
     public int interval = 55;
     public int cooldown;
@@ -27,7 +31,17 @@ public class mainChar : MonoBehaviour {
         ammo = 3;
         print("hello from char script!");
         rb = this.GetComponent<Rigidbody2D>();
+        charAnim = gameObject.GetComponent<Animator>();
+        charAnim.runtimeAnimatorController = charRun;
         isJumping = false;
+        boxcol = gameObject.GetComponent<BoxCollider2D>();
+
+        // Hardcoded!!!!! boxCollider2D sizes for jump and run animations
+        jumpSize = new Vector2(0.16f,0.16f);
+        runSize = new Vector2(0.38f, 0.43f);
+
+        boxcol.size = runSize;
+
     }
         // Update is called once per frame
     void Update ()
@@ -49,6 +63,8 @@ public class mainChar : MonoBehaviour {
                 isJumping = true;
                 print("jump!");
                 rb.AddForce(transform.up * jumpVel);
+                charAnim.runtimeAnimatorController = charJump;
+                boxcol.size = jumpSize;
             }
         }
 
@@ -64,10 +80,12 @@ public class mainChar : MonoBehaviour {
 	}
     void FixedUpdate()
     {
-
+        
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
         isJumping = false;
+        charAnim.runtimeAnimatorController = charRun;
+        boxcol.size = runSize;
     }
 }
