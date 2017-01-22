@@ -25,7 +25,7 @@ public class MoveEnemy_2 : MonoBehaviour {
     {
         this.transform.position += speedConst * Vector3.left * Time.deltaTime * background.speedupConst * mainChar.slowmotion;
 
-        spin.z += spinZ;
+        spin.z -= spinZ;
         this.transform.rotation = Quaternion.Euler(spin);
         if ((this.transform.position.x + size) < camOriginX || this.transform.position.y + size < camOriginY)
         {
