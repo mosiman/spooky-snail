@@ -27,7 +27,7 @@ public class GenMid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!genned && (this.transform.position.x + size / 2 - 0.05f) < camRightmost)
+		if (!genned && (this.transform.position.x + size / 2 - 0.15f) < camRightmost)
         {
             Instantiate(next, spawnPos, Quaternion.identity);
             Instantiate(enemy_1, new Vector3(spawnPos.x, -0.08419779f, 0), Quaternion.identity);

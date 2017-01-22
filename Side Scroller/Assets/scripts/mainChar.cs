@@ -23,6 +23,8 @@ public class mainChar : MonoBehaviour {
     public Transform pellet;
     Vector3 diff= new Vector3 (0.31f, 0.075f, 0);
 
+    public int slowmotion;
+    public float slowCD;
 
     // Use this for initialization
     void Start()

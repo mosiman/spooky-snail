@@ -36,7 +36,7 @@ public class moveObj : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.Translate(Vector3.left * Time.deltaTime*speedConst);
+        this.transform.Translate(Vector3.left * Time.deltaTime*speedConst*background.speedupConst);
 
         if((this.transform.position.x + size/2)< camOriginX)
         {

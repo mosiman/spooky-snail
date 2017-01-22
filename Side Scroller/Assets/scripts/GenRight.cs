@@ -27,7 +27,7 @@ public class GenRight : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if ((this.transform.position.x + size/2 - 0.03f) < camRightmost && !genned)
+        if ((this.transform.position.x + size/2 - 0.103f) < camRightmost && !genned)
         {
             if (len != 2)
             {
