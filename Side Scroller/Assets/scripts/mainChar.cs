@@ -16,16 +16,20 @@ public class mainChar : MonoBehaviour {
 
     public Vector2 jumpSize;
     public Vector2 runSize;
-
+    public Transform explosion;
     public int interval = 55;
     public int cooldown;
     int ammo;
     public Transform pellet;
     Vector3 diff= new Vector3 (0.31f, 0.075f, 0);
 
+    public Transform healthGameObj;
+
     public static float slowmotion;
     public int slowCD;
 
+    public static int health;
+    Transform[] listHealth;
     // Use this for initialization
     void Start()
     {
@@ -35,10 +39,20 @@ public class mainChar : MonoBehaviour {
         slowCD = 0;
         print("hello from char script!");
         rb = this.GetComponent<Rigidbody2D>();
+                
         charAnim = gameObject.GetComponent<Animator>();
         charAnim.runtimeAnimatorController = charRun;
         isJumping = false;
         boxcol = gameObject.GetComponent<BoxCollider2D>();
+        health = 3;
+
+        listHealth =new Transform[3] { healthGameObj, healthGameObj, healthGameObj };  
+
+        for (int i = 0; i < health; i++)
+        {
+            //Instantiate(listHealth[i], new Vector3(-2.297f, 1.283f, 0) + i*0.16f * Vector3.right, Quaternion.identity);
+        }
+
 
         // Hardcoded!!!!! boxCollider2D sizes for jump and run animations
         jumpSize = new Vector2(0.16f,0.16f);
@@ -68,6 +82,7 @@ public class mainChar : MonoBehaviour {
                 isJumping = true;
                 print("jump!");
                 rb.AddForce(transform.up * jumpVel);
+                
                 charAnim.runtimeAnimatorController = charJump;
                 boxcol.size = jumpSize;
             }
@@ -76,6 +91,7 @@ public class mainChar : MonoBehaviour {
         // Shoot with leftclick
         if (Input.GetMouseButtonDown(0))
         {
+                
             if (ammo > 0)
             {
                 ammo--;
@@ -96,6 +112,7 @@ public class mainChar : MonoBehaviour {
         {
             slowCD += 2;
         } else
+                
         {
             slowCD -= 1;
         }
@@ -109,5 +126,20 @@ public class mainChar : MonoBehaviour {
         isJumping = false;
         charAnim.runtimeAnimatorController = charRun;
         boxcol.size = runSize;
+        if (coll.transform.gameObject.name == "enemy_1(Clone)" || coll.transform.gameObject.name == "enemy_2(Clone)")
+        {
+            if (health == 1)
+            {
+                health -= 1;
+                Instantiate(explosion, this.transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            } else
+            {
+                print("health!");
+                print(health);
+                Destroy(listHealth[health-1]);
+                health -= 1;
+            }
+        }
     }
 }
